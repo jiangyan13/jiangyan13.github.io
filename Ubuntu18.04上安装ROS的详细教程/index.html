@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ubuntu18.04上安装ros的详细教程 | Welcome to my blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="ROS" />
+  
+  
+  
+  
+  <meta name="description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu18.04上安装ROS的详细教程">
+<meta property="og:url" content="http://example.com/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Welcome to my blog">
+<meta property="og:description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2022-11-12T03:06:38.000Z">
+<meta property="article:modified_time" content="2022-11-12T03:22:34.372Z">
+<meta property="article:author" content="jiangYan">
+<meta property="article:tag" content="ROS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1">
+  
+    <link rel="alternate" href="/atom.xml" title="Welcome to my blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/RR.png">
+  <link rel="apple-touch-icon" href="/css/images/RR.png">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/RR.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Ubuntu18.04上安装ROS的详细教程" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Ubuntu18.04上安装ROS的详细教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="article-date">
+	  <time datetime="2022-11-12T03:06:38.000Z" itemprop="datePublished">2022-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/ROS/">ROS</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。 </p>
+<hr>
+<h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><p><strong>我的环境：虚拟机VM+Ubuntu18.04+melodic</strong></p>
+<p>Ubuntu对应的ROS版本：</p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu版本</th>
+<th>ROS版本</th>
+<th>安装教程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ubuntu16.04</td>
+<td>Kinetic</td>
+<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/kinetic/Installation/Ubuntu">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></td>
+</tr>
+<tr>
+<td>Ubuntu18.04</td>
+<td>Melodic</td>
+<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/melodic/Installation/Ubuntu">http://wiki.ros.org/melodic/Installation/Ubuntu</a></td>
+</tr>
+<tr>
+<td>Ubuntu20.04</td>
+<td>Noetic</td>
+<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/noetic/Installation/Ubuntu">http://wiki.ros.org/noetic/Installation/Ubuntu</a></td>
+</tr>
+</tbody></table>
+<h1 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h1><h2 id="1-添加ROS软件源"><a href="#1-添加ROS软件源" class="headerlink" title="1.添加ROS软件源"></a>1.添加ROS软件源</h2><blockquote>
+<p>输入命令：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo sh -c <span class="string">&#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-添加密钥"><a href="#2-添加密钥" class="headerlink" title="2.添加密钥"></a>2.添加密钥</h2><blockquote>
+<p>输入命令：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key adv --keyserver <span class="string">&#x27;hkp:/ OpenPGP Keyserver&#x27;</span> --recv-keyC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br></pre></td></tr></table></figure>
+<h2 id="3-更换软件源"><a href="#3-更换软件源" class="headerlink" title="3.更换软件源"></a>3.更换软件源</h2><p>&#x3D;&#x3D;安装之前一定要换源，不然下载特别慢。&#x3D;&#x3D;</p>
+<blockquote>
+<p><code>第一步，打开【Ubuntu软件】，点击左上角的软件更新换源</code><br><img src="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1" alt="请添加图片描述"></p>
+</blockquote>
+<blockquote>
+<p><code>第二步：网址改为箭头所示地址</code><br><img src="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</blockquote>
+<h2 id="4-安装ROS"><a href="#4-安装ROS" class="headerlink" title="4.安装ROS"></a>4.安装ROS</h2><blockquote>
+<p>输入命令：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install ros-melodic-desktop-full</span><br></pre></td></tr></table></figure>
+<h2 id="5-初始化rosdepc"><a href="#5-初始化rosdepc" class="headerlink" title="5.初始化rosdepc"></a>5.初始化rosdepc</h2><blockquote>
+<p>输入命令1：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-pip</span><br><span class="line">$ sudo pip install rosdepc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入命令2：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rosdepc init</span><br><span class="line">$ rosdepc update</span><br></pre></td></tr></table></figure>
+<p>&#x3D;&#x3D;如果输入命令2后还有没更新成功的，继续执行命令2，第二次应该会成功&#x3D;&#x3D;</p>
+<h2 id="6-设置环境变量"><a href="#6-设置环境变量" class="headerlink" title="6.设置环境变量"></a>6.设置环境变量</h2><blockquote>
+<p>输入命令：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo <span class="string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt;~/.bashrc</span><br><span class="line">$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h2 id="7-安装-rosinstall"><a href="#7-安装-rosinstall" class="headerlink" title="7.安装 rosinstall"></a>7.安装 rosinstall</h2><blockquote>
+<p>输入命令：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-验证ROS是否安装成功"><a href="#8-验证ROS是否安装成功" class="headerlink" title="8.验证ROS是否安装成功"></a>8.验证ROS是否安装成功</h2><p>通过运行一个小海龟的例程进行验证,以下<code>每个命令都需要打开一个新终端执行</code>。</p>
+<blockquote>
+<p>输入命令1：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ roscore</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" alt="alt"></p>
+<blockquote>
+<p>输入命令2：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun turtlesim turtlesim_node</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" alt="alt"></p>
+<blockquote>
+<p>输入命令3：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="alt"><br>至此，小海龟运行成功，ROS安装成功。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&amp;emsp;&amp;emsp;以上就是Ubuntu18.04安装ROS的整个过程，<code>特别注意第5步初始化rosdepc，用rosdepc代替了rosdep</code>，这样就不会报错了。如果在第6步安装 rosinstall时，出现错误，参考下面文献1。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p> [1] : <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/480287230">https://zhuanlan.zhihu.com/p/480287230</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: '',
+  alipayImage: ''
+});
+</script>
+      
+      
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROS/" rel="tag">ROS</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/ImitationLearning/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ImitationLearning
+        
+      </div>
+    </a>
+  
+  
+    <a href="/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">一、环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">二、安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B7%BB%E5%8A%A0ROS%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="nav-number">3.1.</span> <span class="nav-text">1.添加ROS软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%AF%86%E9%92%A5"><span class="nav-number">3.2.</span> <span class="nav-text">2.添加密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%9B%B4%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="nav-number">3.3.</span> <span class="nav-text">3.更换软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85ROS"><span class="nav-number">3.4.</span> <span class="nav-text">4.安装ROS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%9D%E5%A7%8B%E5%8C%96rosdepc"><span class="nav-number">3.5.</span> <span class="nav-text">5.初始化rosdepc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.6.</span> <span class="nav-text">6.设置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%AE%89%E8%A3%85-rosinstall"><span class="nav-number">3.7.</span> <span class="nav-text">7.安装 rosinstall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%AA%8C%E8%AF%81ROS%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="nav-number">3.8.</span> <span class="nav-text">8.验证ROS是否安装成功</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p>  <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank">2022工信部ICP备案 ● 陇ICP备2022000350号</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2022 - 2022 Welcome to my blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Welcome to my blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2022 jiangYan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
