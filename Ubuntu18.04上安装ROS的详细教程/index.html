@@ -14,7 +14,7 @@
   <meta name="description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu18.04上安装ROS的详细教程">
-<meta property="og:url" content="http://example.com/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:url" content="https://jiangyan13.github.io/MyWeb/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
 <meta property="og:description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
 <meta property="og:locale" content="en_US">
@@ -35,8 +35,8 @@
 
   
 
-  <link rel="icon" href="/css/images/RR.png">
-  <link rel="apple-touch-icon" href="/css/images/RR.png">
+  <link rel="icon" href="/MyWeb/css/images/RR.png">
+  <link rel="apple-touch-icon" href="/MyWeb/css/images/RR.png">
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
@@ -44,42 +44,42 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <style type="text/css">
-    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+    @font-face{font-family:futura-pt; src:url("/MyWeb/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/MyWeb/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/MyWeb/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
 }
 
   </style>
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/MyWeb/css/style.css">
 
 
   
-<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/MyWeb/js/jquery-3.1.1.min.js"></script>
 
   
-<script src="/js/bootstrap.js"></script>
+<script src="/MyWeb/js/bootstrap.js"></script>
 
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/MyWeb/css/bootstrap.css" >
 
   
     
-<link rel="stylesheet" href="/css/dialog.css">
+<link rel="stylesheet" href="/MyWeb/css/dialog.css">
 
   
 
   
 
   
-    <link rel="stylesheet" href="/css/header-post.css" >
+    <link rel="stylesheet" href="/MyWeb/css/header-post.css" >
   
 
   
   
   
-    <link rel="stylesheet" href="/css/vdonate.css" >
+    <link rel="stylesheet" href="/MyWeb/css/vdonate.css" >
   
 
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -110,22 +110,22 @@
               <a class="brand" style="
                  margin-top: 0px;"  
                 href="#" data-toggle="modal" data-target="#myModal" >
-                  <img width="124px" height="124px" alt="Hike News" src="/css/images/RR.png">
+                  <img width="124px" height="124px" alt="Hike News" src="/MyWeb/css/images/RR.png">
               </a>
             
             
             <div class="navbar-collapse collapse">
               <ul class="hnav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="/MyWeb/">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="/MyWeb/archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                  <li> <a class="main-nav-link" href="/MyWeb/categories">Categories</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="/MyWeb/tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="/MyWeb/about">About</a> </li>
                 
                   <li><div id="search-form-wrap">
 
@@ -155,14 +155,14 @@
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
+        ROOT_URL: '/MyWeb/',
+        CONTENT_URL: '/MyWeb/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/js/insight.js"></script>
+<script src="/MyWeb/js/insight.js"></script>
 
 
 </div></li>
@@ -196,12 +196,12 @@
     
     <div class="article-meta">
       
-	<a href="/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="article-date">
+	<a href="/MyWeb/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="article-date">
 	  <time datetime="2022-11-12T03:06:38.000Z" itemprop="datePublished">2022-11-12</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/ROS/">ROS</a>
+    <a class="article-category-link" href="/MyWeb/categories/ROS/">ROS</a>
 
       
 	<a class="article-views">
@@ -309,7 +309,7 @@
         <div id="donation_div"></div>
 
 
-<script src="/js/vdonate.js"></script>
+<script src="/MyWeb/js/vdonate.js"></script>
 
 <script>
 var a = new Donate({
@@ -325,7 +325,7 @@ var a = new Donate({
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ROS/" rel="tag">ROS</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/MyWeb/tags/ROS/" rel="tag">ROS</a></li></ul>
 
       
 
@@ -335,7 +335,7 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/ImitationLearning/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/MyWeb/ImitationLearning/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -345,7 +345,7 @@ var a = new Donate({
     </a>
   
   
-    <a href="/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/MyWeb/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
@@ -408,15 +408,15 @@ var a = new Donate({
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/MyWeb/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/MyWeb/archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/categories" class="mobile-nav-link">Categories</a>
+    <a href="/MyWeb/categories" class="mobile-nav-link">Categories</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="/MyWeb/tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/MyWeb/about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -454,22 +454,22 @@ var a = new Donate({
 
 
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" href="/MyWeb/fancybox/jquery.fancybox.css">
 
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/MyWeb/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
 
-<script src="/js/scripts.js"></script>
+<script src="/MyWeb/js/scripts.js"></script>
 
 
 
 
 
   
-<script src="/js/dialog.js"></script>
+<script src="/MyWeb/js/dialog.js"></script>
 
 
 
