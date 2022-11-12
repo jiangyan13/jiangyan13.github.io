@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/MyWeb/img/fluid.png">
-  <link rel="icon" href="/MyWeb/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu18.04上安装ROS的详细教程">
-<meta property="og:url" content="https://jiangyan13.github.io/MyWeb/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:url" content="https://jiangyan13.github.io/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
 <meta property="og:description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
 <meta property="og:locale" content="zh_CN">
@@ -63,12 +63,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/MyWeb/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/MyWeb/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/MyWeb/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -77,15 +77,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"jiangyan13.github.io","root":"/MyWeb/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/MyWeb/local-search.xml"};
+    var CONFIG = {"hostname":"jiangyan13.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/MyWeb/js/utils.js" ></script>
-  <script  src="/MyWeb/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -102,7 +102,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/MyWeb/">
+    <a class="navbar-brand" href="/">
       <strong>Fluid</strong>
     </a>
 
@@ -121,7 +121,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/MyWeb/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -133,7 +133,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/MyWeb/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/MyWeb/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -157,7 +157,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/MyWeb/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -169,7 +169,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/MyWeb/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -198,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/MyWeb/img/IMG1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/IMG1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -330,10 +330,10 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-key adv --keyserver <span class="hljs-string">&#x27;hkp:/ OpenPGP Keyserver&#x27;</span> --recv-keyC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654<br></code></pre></td></tr></table></figure>
 <h2 id="3-更换软件源"><a href="#3-更换软件源" class="headerlink" title="3.更换软件源"></a>3.更换软件源</h2><p>&#x3D;&#x3D;安装之前一定要换源，不然下载特别慢。&#x3D;&#x3D;</p>
 <blockquote>
-<p><code>第一步，打开【Ubuntu软件】，点击左上角的软件更新换源</code><br><img src="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1" srcset="/MyWeb/img/loading.gif" lazyload alt="请添加图片描述"></p>
+<p><code>第一步，打开【Ubuntu软件】，点击左上角的软件更新换源</code><br><img src="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1" srcset="/img/loading.gif" lazyload alt="请添加图片描述"></p>
 </blockquote>
 <blockquote>
-<p><code>第二步：网址改为箭头所示地址</code><br><img src="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/MyWeb/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p><code>第二步：网址改为箭头所示地址</code><br><img src="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 </blockquote>
 <h2 id="4-安装ROS"><a href="#4-安装ROS" class="headerlink" title="4.安装ROS"></a>4.安装ROS</h2><blockquote>
 <p>输入命令：</p>
@@ -362,17 +362,17 @@
 <p>输入命令1：</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ roscore<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/MyWeb/img/loading.gif" lazyload alt="alt"></p>
+<p><img src="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"></p>
 <blockquote>
 <p>输入命令2：</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtlesim_node<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/MyWeb/img/loading.gif" lazyload alt="alt"></p>
+<p><img src="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"></p>
 <blockquote>
 <p>输入命令3：</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtle_teleop_key<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/MyWeb/img/loading.gif" lazyload alt="alt"><br>至此，小海龟运行成功，ROS安装成功。</p>
+<p><img src="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"><br>至此，小海龟运行成功，ROS安装成功。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&amp;emsp;&amp;emsp;以上就是Ubuntu18.04安装ROS的整个过程，<code>特别注意第5步初始化rosdepc，用rosdepc代替了rosdep</code>，这样就不会报错了。如果在第6步安装 rosinstall时，出现错误，参考下面文献1。</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p> [1] : <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/480287230">https://zhuanlan.zhihu.com/p/480287230</a></p>
 
@@ -393,7 +393,7 @@
     
       <span class="category-chain">
         
-  <a href="/MyWeb/categories/ROS/" class="category-chain-item">ROS</a>
+  <a href="/categories/ROS/" class="category-chain-item">ROS</a>
   
   
 
@@ -408,7 +408,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/MyWeb/tags/ROS/">#ROS</a>
+        <a href="/tags/ROS/">#ROS</a>
       
     </div>
   
@@ -421,7 +421,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Ubuntu18.04上安装ROS的详细教程</div>
-      <div>https://jiangyan13.github.io/MyWeb/Ubuntu18.04上安装ROS的详细教程/</div>
+      <div>https://jiangyan13.github.io/Ubuntu18.04上安装ROS的详细教程/</div>
     </div>
     <div class="license-meta">
       
@@ -465,7 +465,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/MyWeb/ImitationLearning/" title="ImitationLearning">
+                      <a href="/ImitationLearning/" title="ImitationLearning">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">ImitationLearning</span>
                         <span class="visible-mobile">上一篇</span>
@@ -475,7 +475,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/MyWeb/hello-world/" title="Hello World">
+                      <a href="/hello-world/" title="Hello World">
                         <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -613,8 +613,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/MyWeb/js/events.js" ></script>
-<script  src="/MyWeb/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -636,7 +636,7 @@
 
 
   
-    <script  src="/MyWeb/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -735,7 +735,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/MyWeb/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -745,7 +745,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/MyWeb/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
