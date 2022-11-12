@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>ImitationLearning</title>
+    <link href="/MyWeb/ImitationLearning/"/>
+    <url>/MyWeb/ImitationLearning/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>IL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu18.04上安装ROS的详细教程</title>
+    <link href="/MyWeb/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/"/>
+    <url>/MyWeb/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p><hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。 </p><hr><h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><p><strong>我的环境：虚拟机VM+Ubuntu18.04+melodic</strong></p><p>Ubuntu对应的ROS版本：</p><table><thead><tr><th>Ubuntu版本</th><th>ROS版本</th><th>安装教程</th></tr></thead><tbody><tr><td>Ubuntu16.04</td><td>Kinetic</td><td><a href="http://wiki.ros.org/kinetic/Installation/Ubuntu">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></td></tr><tr><td>Ubuntu18.04</td><td>Melodic</td><td><a href="http://wiki.ros.org/melodic/Installation/Ubuntu">http://wiki.ros.org/melodic/Installation/Ubuntu</a></td></tr><tr><td>Ubuntu20.04</td><td>Noetic</td><td><a href="http://wiki.ros.org/noetic/Installation/Ubuntu">http://wiki.ros.org/noetic/Installation/Ubuntu</a></td></tr></tbody></table><h1 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h1><h2 id="1-添加ROS软件源"><a href="#1-添加ROS软件源" class="headerlink" title="1.添加ROS软件源"></a>1.添加ROS软件源</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo sh -c <span class="hljs-string">&#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="2-添加密钥"><a href="#2-添加密钥" class="headerlink" title="2.添加密钥"></a>2.添加密钥</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-key adv --keyserver <span class="hljs-string">&#x27;hkp:/ OpenPGP Keyserver&#x27;</span> --recv-keyC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654<br></code></pre></td></tr></table></figure><h2 id="3-更换软件源"><a href="#3-更换软件源" class="headerlink" title="3.更换软件源"></a>3.更换软件源</h2><p>&#x3D;&#x3D;安装之前一定要换源，不然下载特别慢。&#x3D;&#x3D;</p><blockquote><p><code>第一步，打开【Ubuntu软件】，点击左上角的软件更新换源</code><br><img src="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1" alt="请添加图片描述"></p></blockquote><blockquote><p><code>第二步：网址改为箭头所示地址</code><br><img src="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p></blockquote><h2 id="4-安装ROS"><a href="#4-安装ROS" class="headerlink" title="4.安装ROS"></a>4.安装ROS</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get update<br>$ sudo apt-get install ros-melodic-desktop-full<br></code></pre></td></tr></table></figure><h2 id="5-初始化rosdepc"><a href="#5-初始化rosdepc" class="headerlink" title="5.初始化rosdepc"></a>5.初始化rosdepc</h2><blockquote><p>输入命令1：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get install python-pip<br>$ sudo pip install rosdepc<br></code></pre></td></tr></table></figure><blockquote><p>输入命令2：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo rosdepc init<br>$ rosdepc update<br></code></pre></td></tr></table></figure><p>&#x3D;&#x3D;如果输入命令2后还有没更新成功的，继续执行命令2，第二次应该会成功&#x3D;&#x3D;</p><h2 id="6-设置环境变量"><a href="#6-设置环境变量" class="headerlink" title="6.设置环境变量"></a>6.设置环境变量</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ echo <span class="hljs-string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt;~/.bashrc<br>$ source ~/.bashrc<br></code></pre></td></tr></table></figure><h2 id="7-安装-rosinstall"><a href="#7-安装-rosinstall" class="headerlink" title="7.安装 rosinstall"></a>7.安装 rosinstall</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential<br></code></pre></td></tr></table></figure><h2 id="8-验证ROS是否安装成功"><a href="#8-验证ROS是否安装成功" class="headerlink" title="8.验证ROS是否安装成功"></a>8.验证ROS是否安装成功</h2><p>通过运行一个小海龟的例程进行验证,以下<code>每个命令都需要打开一个新终端执行</code>。</p><blockquote><p>输入命令1：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ roscore<br></code></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" alt="alt"></p><blockquote><p>输入命令2：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtlesim_node<br></code></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" alt="alt"></p><blockquote><p>输入命令3：</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtle_teleop_key<br></code></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="alt"><br>至此，小海龟运行成功，ROS安装成功。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&amp;emsp;&amp;emsp;以上就是Ubuntu18.04安装ROS的整个过程，<code>特别注意第5步初始化rosdepc，用rosdepc代替了rosdep</code>，这样就不会报错了。如果在第6步安装 rosinstall时，出现错误，参考下面文献1。</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p> [1] : <a href="https://zhuanlan.zhihu.com/p/480287230">https://zhuanlan.zhihu.com/p/480287230</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>ROS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/MyWeb/hello-world/"/>
+    <url>/MyWeb/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
