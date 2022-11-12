@@ -4,23 +4,23 @@
   
   
   <entry>
-    <title>ImitationLearning</title>
-    <link href="/ImitationLearning/"/>
-    <url>/ImitationLearning/</url>
+    <title>通过Setup Assistant助手创建机械臂 moveit 配置文件（每一步都有图片说明，十分详细）【2】</title>
+    <link href="/%E9%80%9A%E8%BF%87Setup%20Assistant%E5%8A%A9%E6%89%8B%E5%88%9B%E5%BB%BA%E6%9C%BA%E6%A2%B0%E8%87%82%20moveit%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E6%AF%8F%E4%B8%80%E6%AD%A5%E9%83%BD%E6%9C%89%E5%9B%BE%E7%89%87%E8%AF%B4%E6%98%8E%EF%BC%8C%E5%8D%81%E5%88%86%E8%AF%A6%E7%BB%86%EF%BC%89%E3%80%902%E3%80%91/"/>
+    <url>/%E9%80%9A%E8%BF%87Setup%20Assistant%E5%8A%A9%E6%89%8B%E5%88%9B%E5%BB%BA%E6%9C%BA%E6%A2%B0%E8%87%82%20moveit%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E6%AF%8F%E4%B8%80%E6%AD%A5%E9%83%BD%E6%9C%89%E5%9B%BE%E7%89%87%E8%AF%B4%E6%98%8E%EF%BC%8C%E5%8D%81%E5%88%86%E8%AF%A6%E7%BB%86%EF%BC%89%E3%80%902%E3%80%91/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p><hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&amp;emsp;&amp;emsp;在上一篇文章中详细介绍了在 Ubuntu 上如何安装 ROS 系统，接下来本篇文章主要介绍通过 setup assistant 助手生成适用于自己工程的 moveit 配置文件。</p><hr><h1 id="一、详细步骤介绍"><a href="#一、详细步骤介绍" class="headerlink" title="一、详细步骤介绍"></a>一、详细步骤介绍</h1><h2 id="1-启动-setup-assistant-助手"><a href="#1-启动-setup-assistant-助手" class="headerlink" title="1.启动 setup assistant 助手"></a>1.启动 setup assistant 助手</h2><blockquote><p>输入命令：</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">roslaunch moveit_setup_assistant setup_assistant.<span class="hljs-property">launch</span><br></code></pre></td></tr></table></figure><div align=center><img src="https://img-blog.csdnimg.cn/1fb18f5125ef4e5d811e3f8e87ec098a.png"  height='100%' width='80%'><h2 id="2-导入机械臂模型的-urdf-文件"><a href="#2-导入机械臂模型的-urdf-文件" class="headerlink" title="2.导入机械臂模型的 urdf 文件"></a>2.导入机械臂模型的 urdf 文件</h2><blockquote><p>点击 <code>Create New MoveltConfiguration Package</code> ，导入 urdf 文件：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/ff192326582f4473817691ca2fb0051a.png"  height='100%' width='80%'><blockquote><p>点击<code>load files</code> 载入文件</p></blockquote><h2 id="3-Self-Collisions-配置"><a href="#3-Self-Collisions-配置" class="headerlink" title="3.Self Collisions 配置"></a>3.Self Collisions 配置</h2><blockquote><p>点击 <code>Generate collision Matrix</code>，生成碰撞矩阵：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/612b9aef100549419e4a596d80b86479.png"  height='100%' width='80%'><h2 id="4-虚拟关节配置"><a href="#4-虚拟关节配置" class="headerlink" title="4.虚拟关节配置"></a>4.虚拟关节配置</h2><blockquote><p>按照下图修改名称：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/2aa8b1adaaaa49a8afd7cdc35f0e92d4.png"  height='100%' width='80%'><blockquote><p>修改完成后点击<code>save</code>，生成虚拟关节：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/6142ffc6e8a349b28185cf2764f68b47.png"  height='100%' width='80%'><h2 id="5-Planning-Groups-配置"><a href="#5-Planning-Groups-配置" class="headerlink" title="5.Planning Groups 配置"></a>5.Planning Groups 配置</h2><blockquote><p>点击<code>Add Group</code>，添加运动规划组：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/44b2c5df57b64c86bb5ccad4067357a8.png"  height='100%' width='80%'><blockquote><p>按照下图进行配置<code>Kinematic Solver</code>：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/6be560dafef14e32b620a05bc3e183ab.png"  height='100%' width='80%'><blockquote><p>点击<code>Add Joints</code>添加关节，把机械臂的六个关节选中，点击<code>save</code>：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/2253ea552fe341dfbbd2c37261b8b3af.png"  height='100%' width='80%'><div align=center><img src="https://img-blog.csdnimg.cn/6fbec498e18b4661a7e1dc0296856686.png"  height='100%' width='80%'><h2 id="6-Define-Robot-Poses-配置"><a href="#6-Define-Robot-Poses-配置" class="headerlink" title="6.Define Robot Poses 配置"></a>6.Define Robot Poses 配置</h2><blockquote><p>点击<code>Add Poses</code>，定义机械臂姿态：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/14038395f4ca4c39910655ce593e342a.png"  height='100%' width='80%'><blockquote><p>点击<code>save</code>保存：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/0ff8d7b2963d46e4b3e65f0e67a67604.png"  height='100%' width='80%'><h2 id="7-Define-Robot-Poses-配置"><a href="#7-Define-Robot-Poses-配置" class="headerlink" title="7.Define Robot Poses 配置"></a>7.Define Robot Poses 配置</h2><blockquote><p>此次配置没有夹爪，故不进行配置<code>End Effectors</code>和<code>Passive Joints</code>，直接跳过即可：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/28a705c4c82748b7a865e444f2a6cf51.png"  height='100%' width='80%'><h2 id="8-ROS-Control-配置"><a href="#8-ROS-Control-配置" class="headerlink" title="8.ROS Control 配置"></a>8.ROS Control 配置</h2><blockquote><p>点击 <code>Add Controller</code>   添加控制器，<br>注意 <code>Controller Type</code>  选择    &#x3D;&#x3D;position_controllers&#x2F;JointTrajectoryController&#x3D;&#x3D;：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/7b03d3a1b78f46dcbdf1e2266278414a.png"  height='100%' width='80%'><blockquote><p>点击 <code>Add Planning Group Joints</code> ，添加 <code>arm</code>：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/89cea41cd0554490a97a7d011938e06a.png"  height='100%' width='80%'><div align=center><img src="https://img-blog.csdnimg.cn/edfadeab55fc488db3211820c4bc7496.png"  height='100%' width='80%'><blockquote><p>点击<code>save</code>保存，<code>ros controller</code>配置完成</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/12c86a54a13e4232b590841b9ad01d11.png"  height='100%' width='80%'><h2 id="9-Simulation-配置"><a href="#9-Simulation-配置" class="headerlink" title="9.Simulation 配置"></a>9.Simulation 配置</h2><blockquote><p>点击<code>Generate URDF</code>生成 gazebo 仿真时所需的 urdf 文件<br>把此URDF文件保存到新建文档中，命名为 &#x3D;&#x3D;ur5e.urdf&#x3D;&#x3D;<br>&#x3D;&#x3D;这一步特别重要，不然后面 gazebo 不能仿真&#x3D;&#x3D;</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/a08095a68d76418ebeaf30d6d1437cfe.png"  height='100%' width='80%'><h2 id="10-Simulation"><a href="#10-Simulation" class="headerlink" title="10.Simulation"></a>10.Simulation</h2><blockquote><p><code>3D Perception</code> 跳过即可，<code>Author Information</code> 随便填写</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/1a96284763cb45648d5b3cadbc9e6a9c.png"  height='100%' width='80%'><h2 id="11-生成配置文件"><a href="#11-生成配置文件" class="headerlink" title="11.生成配置文件"></a>11.生成配置文件</h2><blockquote><p>先选择配置文件保存的位置，然后点击<code>Configuration Files</code>生成配置文件</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/9ae27ced60f44d95852ff0d10ad357f3.png"  height='100%' width='80%'><p>&#x3D;&#x3D;Note，需要在工程src路径下新建一个文件夹（例如命名为ur5_moveit_config）存放生成的配置文件，不是新建功能包，否则会冲突报错。&#x3D;&#x3D;</p><blockquote><p>生成的配置文件如下图所示：</p></blockquote><div align=center><img src="https://img-blog.csdnimg.cn/d66c48a4121e4d0181b4902e6945ea73.png"  height='100%' width='80%'><hr><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&amp;emsp;&amp;emsp;至此，机械臂仿真所需的配置文件配置完成，<code>下一章将会介绍如何使用生成的配置文件控制机械臂的运动</code>。</p>]]></content>
     
     
     <categories>
       
-      <category>IL</category>
+      <category>ROS</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>IL</tag>
+      <tag>ROS</tag>
       
     </tags>
     
@@ -46,6 +46,31 @@
     <tags>
       
       <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ImitationLearning</title>
+    <link href="/ImitationLearning/"/>
+    <url>/ImitationLearning/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>IL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IL</tag>
       
     </tags>
     
