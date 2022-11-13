@@ -16,24 +16,18 @@
   <meta name="author" content="jiangYan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu18.04上安装ROS的详细教程">
 <meta property="og:url" content="https://jiangyan13.github.io/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="@TOC  前言&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。   一、环境配置我的环境：虚拟机VM+Ubuntu18.04+melodic Ubuntu对应的ROS版本：    Ubuntu版本">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16">
 <meta property="article:published_time" content="2022-11-12T03:06:38.000Z">
-<meta property="article:modified_time" content="2022-11-12T11:38:06.992Z">
+<meta property="article:modified_time" content="2022-11-13T01:54:56.416Z">
 <meta property="article:author" content="jiangYan">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -132,11 +126,71 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                专业
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-archive-fill"></i>
+                学习
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/research/">
+                    
+                    研究方向
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/code/">
+                    
+                    编程学习
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/literature/">
+                    
+                    语录摘抄
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-category-fill"></i>
+                生活
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/memory/">
+                    
+                    忆往昔
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/someyears/">
+                    
+                    那些年
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -147,7 +201,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                业务
               </a>
             </li>
           
@@ -160,6 +214,18 @@
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
                 收藏
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                节日
               </a>
             </li>
           
@@ -227,7 +293,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          16k 字
         
       </span>
     
@@ -238,7 +304,7 @@
         
         
         
-          14 分钟
+          136 分钟
         
       </span>
     
@@ -297,97 +363,22 @@
             <h1 style="display: none">Ubuntu18.04上安装ROS的详细教程</h1>
             
             
-              <div class="markdown-body">
-                
-                <p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&amp;emsp;&amp;emsp;最近，学习了胡老师的《ROS入门21讲》，在Ubuntu18.04上安装ROS过程中遇到了一些问题，解决这些问题耗费了大半天，故通过本文进行详细安装介绍，以便其他学者在安装这块少花时间，把更多的精力放在研究上。 </p>
-<hr>
-<h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><p><strong>我的环境：虚拟机VM+Ubuntu18.04+melodic</strong></p>
-<p>Ubuntu对应的ROS版本：</p>
-<table>
-<thead>
-<tr>
-<th>Ubuntu版本</th>
-<th>ROS版本</th>
-<th>安装教程</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Ubuntu16.04</td>
-<td>Kinetic</td>
-<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/kinetic/Installation/Ubuntu">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></td>
-</tr>
-<tr>
-<td>Ubuntu18.04</td>
-<td>Melodic</td>
-<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/melodic/Installation/Ubuntu">http://wiki.ros.org/melodic/Installation/Ubuntu</a></td>
-</tr>
-<tr>
-<td>Ubuntu20.04</td>
-<td>Noetic</td>
-<td><a target="_blank" rel="noopener" href="http://wiki.ros.org/noetic/Installation/Ubuntu">http://wiki.ros.org/noetic/Installation/Ubuntu</a></td>
-</tr>
-</tbody></table>
-<h1 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h1><h2 id="1-添加ROS软件源"><a href="#1-添加ROS软件源" class="headerlink" title="1.添加ROS软件源"></a>1.添加ROS软件源</h2><blockquote>
-<p>输入命令：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo sh -c <span class="hljs-string">&#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span><br></code></pre></td></tr></table></figure>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="742bc98465ef971ddbeeccb901182c2d3b66eeacc428cd70203fb24df0c8e181">1ff677df5feaff5a5b842a787f19baa4a0c5149bced88ee678a7e1febd1060fa41568371499d2d7d8e029f5c374f16da372396a74c53160b94e3af712573a3f44049864381e07191210a71b588ea4d2b6179526ba8e8c286194769f4e0e43ce3be50151f96f32622b88735577a2db27de528bde33329fc42c21cd9f1843cc17b8660b1223601b5b62e153da8e8875ff007378407f59cedffe8e6fdd6daf1c43bbc337117a8e0f13efc6fde1b50efc41e1ff829e921541066ba9f6c12ff4969a69df798fb9572a023ee5bed9124788847cf0460953ebf4c7f3640927b2d24900e6a154e9957d64ac0527a0556b98b372260a487029c1e97454a1aecf48334daf03a08002557c6a15f89fcaddf80cb28d5d407d7728fdec98179c41c8bf5615088a0fb03281c3509fd55980bf4ca75c8537acc95f3ba8bab86dfc134c3150ccefb3fd09812657d50e4c6a4721d8d1a6e48024460743bd1b2eae9bc912c2582179618284d1b16eb8013d3ef64812d8db5e20d836c2a29523aee5b98976e6bdf99e8c21b988e5f7bd993b9682a032902fdbe4a745b65574590bf331a6bd1f5c89960875ebcc758a32491b1d12ca8653c473789638e034f61541cb6c6f356ef929edd8ee1a3e55b3429e5b402567dc494b191a4e71348dbae1e1e38b40251bff96891ef13e260be53ad2e2d2dcd989dabfeb1b6873dfdc326cf99969444801fc5e8dc266fa7ae14c1c023b1f61c1cc0d019ba06920b2226b6f11fea8e76290eb69a7688f3f7c839ed4fcf08300dfbb4472d2ec4cbe7b147bdb8c9a557a32acd6625b134fdd860615af97e17571a3b16a53cb647a0f98b97907f9750ef77e383d5ba9c8f30e21c83776e25f57f840c4f67cc6c4a2becd876dbf99082f8935fe4b035e4efeb2aa78c46d154cb5966e3ae37e29e52e457c8bba6856deaf50e0642b43bd2649e53a8b7fe1e2826c66bf5d4292c438529ec2188f5f176aab4ffc464819961e7c4c42c6df4d61010c0f01249705dc93d758357afd69f2278a1621f6deed9a974f5bcff2c43ec3ec64993781753c4b2f340663beceed51456783f7b590dda5fbb634e55202c388c428af808d973902cfacdbd4679186f3cef6a08c7e7d26ef61e51dba2ebd6b93b672555bc859a360e37fd2484a636f5a0f811b1c80f22d91d51ac405756786377aec7de200e0ddc336aa239ef03b3952cda11b138ddbaa447c218bae58404176883309cb659e21aac3a61207c8b7e17f4327d1d739f32d418f8908ac929ef9b518639ffadf88603987f1ed03f50652f2125ce5c28cbcef3812296a98484d1edf829c9ce1cf5ed21c08802dc685134afd09928fb75fdf96b812262341070c800e0bd64b80da880c917b250e5ea7239fa22bf1fe355e841ca23b9ccf59ad8c65b6aef9f4b1e0f486a3f397438d971556fb9ba33b808203fb92931af73fbf14dc7c22a35bd874d7337b9c085d117d973e358184a5d1e2ea8b329789014775e9866cbfedc22f40aab01b13eb989876f350b71adfdb1f258f45c87991c1951363e170c43ef771955391522ace91648d20569deb8eb8e01ee1186641f8d5d2ef92c003b1cd275f10ffe828f13ad7ee1c1cdc6ebd05a838548d253d6dc6cfd97b11fbcc687a3cf69c0b6ae28131e35fbea6e62d6000ac39a42a852be965220ee640a3a1766bd8018d48eefc857760fd3fd20c467eae99d3fe279cbc541b55c508c4d13a4d4385b13e2f4cd829e42aee6f00a1bcb7049a3bf69a19eac3775e2141deb0c7a381903f2d080f07a28aa6a4536fc39c15b5f966e2296d0e84ff14ffa6182690b5638d69f9add9d9e3e91c6155a905dabe751bf9a8b996f055354b20195f31d287d8e860b1a6dd79c3d5e1ee2bcec2fc8268ec7b4a543d1421c9ef24280fe40fa029a0388ae2c63f3e0c1537b5ac0e96b658b4080bc438b17a6273c9f15ec0ac1a4f8473b26de25d3adfab304e80b15c6fd86c2b0d73b60d381590193d96d70344f23f33ad9db9869f5ab133e51e8c9dcd0fa3c57b60e6a1dedafedd1fd68f089e5f535a9e811d9a59b2084cc8e7486df3595026c3b1faf03f316f6e3b6ccf1c9de493994d401c66045324fa31bd558efb954e7b467748a771f274fc6bb42b850dbfbf9eb28ba0929bc6c8095a0f63f12d81beb6769ee316b91cd214777d8996e70295c922bee2c1160cc032ab1441e9f75003f2d9ead705457b8c14f49baeab13d1ff96a7374502112795ae855a716a22d13bbda2279b4b69de4cfeabbbc6dc2c8c30fdd584190b1285b4725f2ed772ee9df823ff114876b127ad9dc348ea4b2650569939d9bd9ad017cb1b7ff03494b756617809e67b6a4431d2226d2ca476ebfa314563959aecdf60cfd644a5dbc66678edcfe36ef39670b9b2da5e336527e77ff39570608d5a9215bfee42445de57ef48f00d7c264610baed2c82bf74bfff58ec96313c122ba4a17f78a352c3553f954e842420b95476c3f80c225192af998d96341c1d272a84a40dd729b42135bd9c904540b9527cc1066c93ad5c916ffcad95f7ea9c1e12a0ccb0a3f65b80aa5c123b4bc9e1c33a8e2d3ff0b2ba9c2ed1ddde16e278fb76eb35a59c188bbea64120bb0785a34e4ed4e3dcba3326ef606ee19cd4ddbb44970ac356effd08b861fc7768038a3a5e1c5b96dda12b72fa550975b5848c52c69c251cd8114b306657203c4f10c73c43c97a5040e0ae6a630c798c815d790eb04b92c15477b855d41572e395abd52453cd4fb190d85b84fea91a0b44085601275f55126b4c964efd5fcbf365df3ff59b741b56e1cf80fdd4539cfa6767f52b9fdbac444226be6b3218df44a876d3af475cdcde3c050d0d7401bb1f0208aa3d30951b15671e08ea6a78cfb5f62a803563541e68401d368e22d2b0594db5fe47d15f77dd50e534b6a3de1dc80e2afb841463b8a9337b96eaad0d63ad183be59c5e15e352ceba0705ceefd92ed581ab1c0243d9081c28ab5a05b53b2345d1ca0eb02f67577f3fa09fde0dca8f5f4b9b5d054ecfef925adaaf4b4d0380ae3ea4fc486eb279ab6870c9b8a589c576bd8bf4a11dd4ed3805b0659dd204ef8dc28dd96eae67f66ecaab7cc86afba6efc6c79f9fb486cf5da6a825f34baac48030a0db88d308f6b119d556cf5d3e0d7e495021116141c35800dbc154470beb771185d48d40e4b7bac38686e3940674239bb8eb2fd3a31dda75679d7ca22142e5fc9dd42be6e732284926ff5ebeb9b19e9ec9564e0ba4c78a9849831e730836cbf310ac29671c199b67b3fc63b650880f3773f0399ffd5aefb87fa860bace9dab2906296c83af0b1ab9dfb516919638b8d29d8f0c3295c9409a7fb76aa3215e6ade61e24a77c6675fee2583755656f37149040770e5a9b1c1dc0332e098a85db57e3c3e76427093e1ef0324564b59762dcccc2d54d645cfe84999fc1fbdcb3a0a0999fd06c9b4d0c6be9a000fb7ab4806f8be474256e7dc9e212fbbbaa8f78d00cf066f5f8dda8043264e2791564878b1abe86234548f28b64fc671b2f740fded61102255732db3aa54bda2b4e0b81275db56bf322ec820f871206bb40b87cc8b2e3db2a8b44eb77807d1ac86173c3309a4246dbbdacfd1444e782716ca9fbedb249f285e75f37cef96d90da7caeec2df500eb7a58541e65457d1f67f8cca4a353d7bdc3d570d43ca7a185f38a7ba9589500b0a435780fa1953134ac28051ec88e4b2986d4c2b51a90e6c496dad600ce79c6771e107bc726f2a5a83d308101a9f5f1d0d31fb8b1ea22935ab4c48a2c8be2fb524c39d558f52626a8d925729a40e7878efa765793eff8e2954c3e687f6f1432aa1d5c6a0f77b61c3d3bedef0ace537b4baf5e81ec1d51353ffec0bc107e125270c83f97b4b209e38ddadf60d047930a8d33bfad4a1f3572f8defa0bed8f972c2fec1b0fef84d1f74cfd1bdc6b2e674f9fbbabc78ae542c0bb44910d08a205f1ec857776e29a6011eed0f7aec267280b63f05a82a391469155799a439123ea2cb3607b31bc455a155738183c4d3805e1f57fa0117fba74f1e52562e26cd2bd4f8a416d111a2fe06f94883fd72b2c608b7d35b72e84a5ed842e880cde525115ff8dcd9b3a9c2c50176e8ebf34d93a925ad701747b819cd7aa8129859e341d240cd6e613afe3149fe572ec4aec2db2c98c86f2708e314b41958ce07b05ada1dce84238227c30b92659de420a8b4b8d18278983b5796e7de667912f211eb7a3c87691c093c3aa7ff0d62d7c8d668042ac28dee39e7635bb91d76bfaf4cf6cb39be16fc9dd896f8241c0314fc1a6dc08145d3d301813bb285130fefb388ce3cc09289b9e51bd3d1632fc432d1b27ff5c3e16d3fb3db43140eeed303eccef60e5fbf11c34a9a5e1ce03d7f929d01b83893165cbe6a18bfe5274460bcef6635c4c96f3c2cfd619516005bc93379ab20a8c68aefc450be483af73bd7d7e1d0c0eac0c446dc20c34dafa5951c42c73392f4030a4f506ec2500187a8fd415f179d79cdd25ef3ea1e02616fcb6c3b9a8f6d2b1cf806edb95c1cc3d7cbe0f44846a3f9543e1b529b8cb00c01b30e0592939ef29c1110b85012d6ef4c834f7af587c44136a7f00ec72dd39c4329d78d0f87b00c06ff3b1b6ff1425cac833dc69f872712f6114ae1318e030bded6fa249b25d5869598e3eb93c921a3159b2d40588bb8bbde03afb63429f18156edbad23a6ae8ab058ac97f9d012c4757fc413d4b2691234ee9a3dd5c79345d1b8ddfabb41a41fde794de7142479b88015c7f476ad33784e062891c502cae96547ace70891a81380622bbb9b4ac9f4c8808ba0fef3426acfc1a346338d1cd91e588fd40c6d95b050e102c41ce0d85c96f697c7dac47ac045867a48a1f28ffe58dd522008d51db7997e76872109d2269b498421cad3feb58de6ced17f12f2c8b3b612545070241d791da05239261561865853d0a6aed78121cd9c754198799c3fe344c06aa91dc85aa4d1430ced7bf64f68c1b696be2cf4f8515c4313cd6ad3e652377d25f53c23e48e15fb27aef5146ff37268dbdcf62b4c963e6fbdd9ef837b5f2ee9b5c808db5039160677cf5972b931bdb2f547cfdd756f4215ddd675c7e22fe5063e8f82e160117c19b9eb9806968a5616d29a0e00d8513d595b30fb8277072acffc7cf3fe217361f57a50b69e3365145c97404207245629d9a34385e55afda7226250880a1a0ce3ef635300a3ceb703dab1d72fe236b660fd4cecf29e3f906f86c03bad1c74e2738064e0a35871843b5f85c897a78921c944a942cd578c45b0b0a5fc9fe5b6ad9d3e6e68dbb8d08876ea985095ca1f229dd6973dd2ead88558fc72888e7aed8d39d3e2380b13da92b8ba686f5d088e5a6fe734f00dafc2760c2d74e9dedfe2acf1819017b2fa11f35b9775893267a955d90e5129190378c08fdca13619f57415f1234d698d847f4343f588e7e0de3029aa054be5ca3381e293cdd41d244badef5140f5569cfb2ba7705f323eb6857484920c726882d75ce324f31e0b37a5368c3a986bb5845b2c21e78e7099d4badabe9df665cf61929c7b4717d2e973c48b8db1f3b5b58029f7c28ce284b5a851fee9180587e60a8fcbe2a9c6a9e88ca5f57f425cfa268ce76730e6032840546271a4a5c154cded85a2bb19d2c07b8f27fb2a92169e1be53adeebce57a1c70f46d9b7447d634c6a014ab7f92e8bbfbece24bed6c7177ec750bf88ad0fc0d3023f4726935ca140ce7c9a49ebf4434b225cd7c07d2c72d42af3e876df3b6752e1b39d3c87632065e492f6fb6f20b565b8fa06e302c2d238faa319f6f7ea4c244e4b39f1c2c5e4ef0d8f6e4fbbecc7ef0e4d9b4dd2128aa688718de6b351b7a0dc771a16ee874d716ca5ce3a74c45ec35447992bf373bb32dde578e68f6538810870c4dc40276a8d2ac88d761db9d41a4be2e952225982d530854bb1147bffda1b7983562999a5784e56fb6dcf62eff19c4f9c5d9757679f3747787ebc93e5c1715e0fa52acd52070ea68e1202d79fd96d67c5d5ddb6d541e8074c0170c4350b816b2130ba007b92723504460747c725dac81990c33192ca8c3f9ee07d18c3bbe87dd4b22043b7cd4d76b3b185ca3c824579ea62a3720241211e689b4472552fe4d7f0e6733a23b9ce936630613f79c839785e8f92023fbd60214c748495340a6e2bea5026a8b70bb77126ca36693bfee6d875ebbfa4f311ffb5388d1b2ef2c1abcaaa35b676883c9ef7098044ca2a542b5945f635eb87663e4e6b68a1a37fc06fd1ff7b2a8ea736f37bf2c61d295a3a7799d9addcae408a6f12c77c154e003914bc8a7f8ca74df3922111aa31c36679539336384b2ad0bad7404d0005e233d09273a03221b38b9d25067550d906badaddcbd861f6c30f7f5ba71942fe7a204c0e2736edd7b8858f0e31fcdef40ee5e925dbfec724dce8722db69c97ab8bfecd7d0b40f7e1ff3071bb0a92c2ba0fbb6f17208cbca64f361e8fff4d3e2e4eca1ac8127a6ceb1ca69c7cabaff66c1a8aa70dce458cda1756db8d9c6da958e2a2e6069ec991f9319ea1ac02779227ea96f040ad1662506243e21ffc0428348547ccd5eb8732f7787534d18afddabf80376a3e5b229a70c33098d25187a3517891de1a7f2991e4e6502163e75f1fb725e69bbd249e629a96b9a1af2725f914e0e7dc16704044949b43c58a5debc0552824690aa0adc7ed3e87e28cac9d256e2d673066e4f1595b1c437c129a1fffa90389e9a3ef4a8fd7c04adfd5feeed9700eca9c384bbf9e4747a475f3b18980519ed10696a71b300c9cea5dd91e6162777d7fa5439c45497d1c17e0d5ab9e42d58fdabc04df4d56048280263bf7f5dafe60120e4af1569ec54dbb25ac1ce63c547888b425fb3719cb8af12be29c0e544ad87e36f27f966c0c32126c91685598a6cc105a954d081ae6d10f74a539877b41c22a2e17d86a332fbb947d7ff75db88216a71ca89e64377b230a199765b5a9ad13c7c7524c39c71c74fc0fd199ba591e693f72fd2b43181420638ede2644117c9589f3dc445b21380e15e7ae6f816d5fc51cb21e09f0231720dfbd730cf15709c626e620cd45f11bfc0260e436bb243d50a79aacc26b0441fc9bd98e631f46e54f9e912462f3fa4fea2bc7023b954f8e970171cb9ea54c87538c8585a0924f5988e040daa132ee4b256c976c284f45f6b246dda69b733c39bcd729fca48b6837bcc97c0d73fda1e1ecf2271082e2f33589568898e02552cd48fc5c0c249f5a44fabfa7b9af24d1608af4aa786662b6b5e9de8ec474a721d7e94a08e852703f8ca1558c294397e0bfe924ed7f8bdba072bc096d12e5fc5dc48873495d22375b54e7587a9af9d270132a35424ee714b1a70a27aba4a989c5fedec9ba232ce72db943750783f273e5f4a3b8fbe04e19f4c99554bbe94cd6b224965d442989c0c85d3b3b00a79815666dc85af01e96bcd36417161f95850eaab423745e07f22633cf1bbd438358b02246fdea22ab84a38f467c48c7f9f279fa670bc50279d9aeb2d9546ab6c687cbe86a645bcf4d3c2fdd5536c17a1c28ecbbc971919b2a1f558001c34df5d87678f65c31f8d848d6de579c1b33f8d055c307d0a3631b9700dc4519951fc0e64a9fa574d059a9d70dd76390f638402936fe43e823b4311e64183a285833c8caeb6f247910e03c3a378e93769955c1abb9254f5daa64fb89c08a59e262394166a168f4e470b2ca2d49b69f285aaf9d322f049f5bea832ea6928bb1372ce2fb60468a4266c8e782755c19cb695020b8b36b5707d5006285d7ac88c5f3e184b6c2fa907d606d8de552ea31d154e3c9af8be7a7d2c7fc756ac5a22cc2fb16f8bb691a806071e055c0da835ad9af557c94e8e8777f6effac706e0ed96478426cc50f1113061c25be0090676efa6717899b6d076761b5e91f2bfc1b1e7da669aa01aea9a5a207cae421ffca0e5fbb58b42298b002ebb23dc5146ec70f8a26eeb4c4d8e9ff61261aef5b55a024bdab1a94b53f0b96530aaff8efba8db3dcb9ce7fc49fd9c82b00317ffb8c581cc882c15322de83b3af5ec8f9a68fa325f3935d193f9c1cb2e5c5c7505f271edce893989efd5492edf0a17df27a6996a179b971c4a32988d6546fb7b3cfec682640f08c703ac17ab5cea3008ed8d0c046297fcb2618d67015e9da3fe8837302b137334e83f4bdf1edbb81728cf228cc45752b7fd17393c433c2222eee9232cc91d5f4bce03a412008634f08ccded1214f233dd349b710a6e1fb1fc724040fd776fcd5a8dc8d7d9441c210a6e17f49102db049573a1f92c0c7fa68518f6fa506c5091e87e1ee86448eae4aaa3861ebe6e4a57e30c7cb96448f58ccf6fca46e98287145a682b0dbab05ce4df56cb8676e2d67c06f7eb9e0cfa399ba10fd349ed2bb76223bda1561cb56602509f1d6837ecbfccc8318e5668e5dc1ad740b4c23ec40960ecf2cb5716e5929d3f21b1c7c3913be2fd7691eac26a4481ed56cfbd55f218e0bd9d40b050c13a51bbe225c2431c725dc3fce8321961d4ac0270c28b61ce1dc266c02407edc8f4dedb78e868cd277bb778cf7771ec18b7a570966e58c3d89192566ba427879323f6f541ba33f86b79a6136b899efb0ee6f7174118dd7ae93d08bc7dabd58e0995ce5e6d43fcd930fe08c6c6e50f1c720038ec5bb4f8860d83f3c22ee73f73e59d0c60a2ef0cee3a259d665d96f2e69f85bff878b1141adc90898025aee53c17eb65fd8fb4e333a7d25fe82b438fd80ae26327b9ba84d07539508926b43ea5893ec953ed89c2de75aca4e4612c708bde996dcd9f43e905ba614cb3b8259b8056a32c9de05d8ba5d5dea6a5489696aa69a9d0257af700509434d97c79db1ca39c86c709f6ff78ab6e1b5ac328d4034ddacd55864f610f2105455716c67eccc8d251d6aa21aa35eeca8a6ce588ba3104de78ec04a48cc0a4b16dd318f58f3a4ec620007d2e4847cbc3ab699e478ff93686fa7f0c2ee1ad8762d520fda3bf91e27710839e1f842f5731ed9976f52af0a4f85fb4307662b775d8fbff4a1de8c58c79b42adb7dc51530b0a9c842c2a6a4954e15f046e2a1f7d725fd2028a3d897a7bf5a0eb41160cefac819c716107ab7f86e08a97e91b129c922ee25fc8c28c5b4cd57cebc72f75c3244393817a953c9821a8a567d34cdf74da9c6cb3d104a0f41dc7adf6d2fb0683cad571894667b2c1e7051c2062eabc10def3d2f11149558fb51c904ad8ba1f22254a0627c22c3063765ec2ac48f3c47e30b7c085e73975a3acdb7571714a9ef851085e80942f1b37defefe452e3771212d37c118c71f9ace2cba37e6fe857ff5599b8a7cb7d192eebe9b3dad691d928d17042f19dd21e1c91e3c3425b2cf95ced212f9f1b077539ed3c8a4d5b5dd835610197c0a7f9805742fc77c27b84e28d116f917939e6b62a459273a182c454555691ee57fae389804f495f6ff4c407ab33aaa4982dd3521b612c246253af8052928cefeaa0f0e7c4c32f91668deef40de55f8a456e7b208e785252939cbbf51c679dba39a56837a98d6b768d3328069957403cc4ec6192220b8a152f29ce9d67815bcf9f99b1db1b671afca4ccdb9903d14d807788af3432a4c825d77bfc147b7601952c720df8fb65d779a09a5ab5ed4d234ce0c21fdf9e97e9e2fdcd42d33e6bc9958e55dc1f7fe5314e168788d951b54a716c491f90dd9551b26aedf730b56961937f1f011bc289e36b3bf6849748b9ca7cd48a13fbd74e5b10fbc5ee33fc711575ba329d71a89fb56ba626a79c9af8e0d00423e5e2a0ee71c312e92101d735fd5ae0e9148aae169e21e3711ca61dccd8eda46d4f8786630f679d313a1089aaced4fcb83acbca635a92fe2fd6ebd44c69c6b5e48d79b6dcd49c078f389d2dac3a4fbed88b922eedc49edc38af848394c83df62cd3a8ed17150e8aa52711a8373f13ab599ef5fc5fcbc511a848ae2a14a3818ef429ad0a1ed19fda064bc6396bac6930a31680579e8fb0c8c98df4b00afde477c91f846aebbb977e55c3db4a28ca23b3735ffdb46c24a7fb929544c5d2874e670b0f38aa49013558e542ab0956caa716e7108294a9fae23c016b6aa70e7ef6a82b284e852675aba1ce55a97bd8856b5b128e5749ac6fbffb7c69d761d7f9da4afa3ed482e8e07f2c8046a74844dd35c00c75cb291b48ba21c847cc92d871499b3e2416ed3e9f99cc2a458c6503ff4e99578b17ff90b122852b29875b6db554c72cb29f09db729ca76b2bd701e335dd3168b9ae75f6e2b4634d925132c1bca41b43a7edc87c553d4085e542f681501b585d4efa299ad9ce104c387a5acc583a619cf2c28e30cd4f4f45f07be46216a96f3944a9969b5e6ce124fc52c67d0474e6f1b8771e2a48dc6768de1604081ff9d755d0b926b96ee8dec8e3450e1350b69bbd5ae12c5e44e708a242061598c784f1a22326cb0f5b3bef4895ef6712aa28fab669fd4630ab79fe300ca2cf08eadb8ea0284290d37f5e2b561bed8243662f1de5fe4ab439a12a80491443dbb2cb602f3974185e785c8fee7f1b77603baeefd83960071b51c0ef4a13c97be392732939312fa7580f42663909ee3f9f2ba67dd242bef9d29bd147781fd5ff172ec28068425bd0380c6d5bebed8efe3f1008598b81e988abf093dc27746a18e6df6c5245913b7e06a84093c21db85f0e71961713e8ee36407cf29db08d7de9606d2c177e5f932a1916594d42ca9ce42cfc5f38aa2cb0755e9a364e8445a0e3ed4dbe3f1b134ec178295a2be62844d3c6ea7a474edbded4678f4df70bb536c9dc5cc6cc4c58b46fe09ad4de660251545fbe122177e39233cb8353f6e2adcf434cfdf7c3996bbd67b57e6e1b3ca4b07bfa9e2453b5557d693aa83d602b50ec1e5c2a30d5b01978aec5f199d45b63de6f577dfeae994c0e5b5b0e4c6f78f8f331ca7b50bf3f9c4c928d141591f1d0059be72c997f9d4d237c4e2c4045b48dd205f83329df4af5a9fa51813adbdacffff990dcad899561d1002791706051fec8d7edbef6f0ec2a7c894a7313d37f1257c7cc5b9097939171bcec31f5cbd0a8e6b0d111e5b37c171833fdc9301fe9be2623f68b872822ef2baec87bc1f87bea212a1cf78c0f829a44bc91b8207cfaa7268b87eb85e6fe03744daabd6d1f5b7e8db6f4e929132b11b751448592f6f6d07099f0d99d15036036c5cc445a6e7c34d5e449f909b3bab75a520ec7acf5617547ad2600c40883e5300dd84001d5faf29f8c8be494f39616ec9a75e8799aa969b500ab39a6672e1e4d88bd1fc6cffa14014fa66bfda9db2902dc67d56bdd649a948d3d2e147ab3917320291641ff797bfb3165359ed300055b390d786bc08c262aa6d64bf76818a64eb43e92f94a3124781e0cc82ac3ede18a02006a8709fc1504670c582e63bd8450018ae1c53d6c6bbef600ba3e2db874cd879267960f3fefa71cfd4d4ab645c19e0a04a0cc41d8d883b16255427cd4f8ed4e9136377d3cf14d27f60e</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码查看文章，没有密码联系vx--SUN_WSSX</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-<h2 id="2-添加密钥"><a href="#2-添加密钥" class="headerlink" title="2.添加密钥"></a>2.添加密钥</h2><blockquote>
-<p>输入命令：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-key adv --keyserver <span class="hljs-string">&#x27;hkp:/ OpenPGP Keyserver&#x27;</span> --recv-keyC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654<br></code></pre></td></tr></table></figure>
-<h2 id="3-更换软件源"><a href="#3-更换软件源" class="headerlink" title="3.更换软件源"></a>3.更换软件源</h2><p>&#x3D;&#x3D;安装之前一定要换源，不然下载特别慢。&#x3D;&#x3D;</p>
-<blockquote>
-<p><code>第一步，打开【Ubuntu软件】，点击左上角的软件更新换源</code><br><img src="https://img-blog.csdnimg.cn/274ecf3bebcf4b189c09cb846884bf1a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_10,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_10,g_se,x_1" srcset="/img/loading.gif" lazyload alt="请添加图片描述"></p>
-</blockquote>
-<blockquote>
-<p><code>第二步：网址改为箭头所示地址</code><br><img src="https://img-blog.csdnimg.cn/3b6b85c39f084e21abb569e067d95a98.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
-</blockquote>
-<h2 id="4-安装ROS"><a href="#4-安装ROS" class="headerlink" title="4.安装ROS"></a>4.安装ROS</h2><blockquote>
-<p>输入命令：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get update<br>$ sudo apt-get install ros-melodic-desktop-full<br></code></pre></td></tr></table></figure>
-<h2 id="5-初始化rosdepc"><a href="#5-初始化rosdepc" class="headerlink" title="5.初始化rosdepc"></a>5.初始化rosdepc</h2><blockquote>
-<p>输入命令1：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get install python-pip<br>$ sudo pip install rosdepc<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>输入命令2：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo rosdepc init<br>$ rosdepc update<br></code></pre></td></tr></table></figure>
-<p>&#x3D;&#x3D;如果输入命令2后还有没更新成功的，继续执行命令2，第二次应该会成功&#x3D;&#x3D;</p>
-<h2 id="6-设置环境变量"><a href="#6-设置环境变量" class="headerlink" title="6.设置环境变量"></a>6.设置环境变量</h2><blockquote>
-<p>输入命令：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">$ echo <span class="hljs-string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt;~/.bashrc<br>$ source ~/.bashrc<br></code></pre></td></tr></table></figure>
-<h2 id="7-安装-rosinstall"><a href="#7-安装-rosinstall" class="headerlink" title="7.安装 rosinstall"></a>7.安装 rosinstall</h2><blockquote>
-<p>输入命令：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ sudo apt-get install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential<br></code></pre></td></tr></table></figure>
-
-<h2 id="8-验证ROS是否安装成功"><a href="#8-验证ROS是否安装成功" class="headerlink" title="8.验证ROS是否安装成功"></a>8.验证ROS是否安装成功</h2><p>通过运行一个小海龟的例程进行验证,以下<code>每个命令都需要打开一个新终端执行</code>。</p>
-<blockquote>
-<p>输入命令1：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ roscore<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/750319d1799845f8906d9cfc0d77c8e5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"></p>
-<blockquote>
-<p>输入命令2：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtlesim_node<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/47b8b5e2d95f41f29477eeef5057d566.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_1,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"></p>
-<blockquote>
-<p>输入命令3：</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">$ rosrun turtlesim turtle_teleop_key<br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/0810cab4e24342378b4587aaa50480da.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3dz6Z2S5bm0,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="alt"><br>至此，小海龟运行成功，ROS安装成功。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&amp;emsp;&amp;emsp;以上就是Ubuntu18.04安装ROS的整个过程，<code>特别注意第5步初始化rosdepc，用rosdepc代替了rosdep</code>，这样就不会报错了。如果在第6步安装 rosinstall时，出现错误，参考下面文献1。</p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p> [1] : <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/480287230">https://zhuanlan.zhihu.com/p/480287230</a></p>
-
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -449,7 +440,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年11月12日</div>
+          <div>2022年11月13日</div>
         </div>
       
       
@@ -490,12 +481,6 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
                   </article>
                 </div>
               
@@ -529,7 +514,7 @@
         aria-expanded="true"
       >
         ROS
-        <span class="list-group-count">(2)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -543,10 +528,37 @@
     
       
       
+        <a href="/ROS%E6%8E%A7%E5%88%B6%E5%AE%9E%E4%BD%93UR5e%E6%9C%BA%E6%A2%B0%E8%87%82%E8%BF%90%E5%8A%A8%E3%80%905%E3%80%91/" title="ROS控制实体UR5e机械臂运动【5】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">ROS控制实体UR5e机械臂运动【5】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/UR5e+robotiq85+kinectV2+gazebo%E5%AE%9E%E7%8E%B0%E7%89%A9%E4%BD%93%E6%8A%93%E5%8F%96%E3%80%904%E3%80%91/" title="UR5e+robotiq85+kinectV2+gazebo实现物体抓取【4】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">UR5e+robotiq85+kinectV2+gazebo实现物体抓取【4】</span>
+        </a>
+      
+    
+      
+      
         <a href="/Ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" title="Ubuntu18.04上安装ROS的详细教程"
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">Ubuntu18.04上安装ROS的详细教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/rviz%E8%81%94%E5%90%88gazebo%E6%8E%A7%E5%88%B6%E6%9C%BA%E6%A2%B0%E8%87%82%E7%9A%84%E8%BF%90%E5%8A%A8%E3%80%903%E3%80%91/" title="rviz联合gazebo控制机械臂的运动【3】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">rviz联合gazebo控制机械臂的运动【3】</span>
         </a>
       
     
@@ -766,6 +778,23 @@
     });
   });
 </script>
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
